@@ -124,11 +124,6 @@ a:focus-visible {
   color: var(--text-soft);
 }
 
-.hero-contact a {
-  font-size: 0.85rem;
-  color: var(--text-soft);
-}
-
 .hero-links {
   display: flex;
   gap: 1.5rem;
@@ -153,6 +148,20 @@ a:focus-visible {
     animation: none;
     opacity: 1;
   }
+}
+
+/* ----- utilities ----- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ----- tokushoho ----- */
