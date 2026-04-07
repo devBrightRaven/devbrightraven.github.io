@@ -94,6 +94,7 @@ a:focus-visible {
   color: var(--text-muted);
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   letter-spacing: 0.04em;
+  margin-bottom: 1.5em;
 }
 
 .hero-middle {
