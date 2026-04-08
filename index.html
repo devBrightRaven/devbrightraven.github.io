@@ -18,14 +18,12 @@
   <main>
   <section class="hero" aria-label="Bright Raven World">
     <svg class="hero-mark" viewBox="0 0 500 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- Enso — two stroked arcs, rotated slightly for organic feel -->
       <g transform="rotate(28, 252, 280)">
         <path d="M 232 125 A 160 160 0 0 0 232 435"
               stroke="#e8e0d8" stroke-width="38" stroke-linecap="round" fill="none" opacity="0.14"/>
         <path d="M 272 125 A 160 160 0 0 1 272 435"
               stroke="#e8e0d8" stroke-width="30" stroke-linecap="round" fill="none" opacity="0.10"/>
       </g>
-      <!-- Raven -->
       <g fill="#e8e0d8" opacity="0.18" transform="translate(290, 48) rotate(-10)">
         <path d="M 0 0
                  C -8 -4, -30 -22, -58 -38
@@ -44,31 +42,37 @@
       </g>
     </svg>
 
-    <div class="hero-content">
-      <h1 class="brand">Bright Raven World</h1>
-      <p class="tagline">Bring back your agency.</p>
+    <div class="hero-grid">
+      <!-- Row 1: Brand -->
+      <div class="grid-brand">
+        <h1 class="brand">Bright Raven World</h1>
+        <p class="tagline">Bring back your agency.</p>
+      </div>
 
-      <div class="hero-middle">
-        <div class="hero-product">
-          Your backlog deserves your attention, not your anxiety. <a href="https://brightraven.world/maida/">Maida</a> helps you see what to skip, so the right choice becomes obvious.
-        </div>
+      <!-- Row 2: Product -->
+      <div class="grid-product">
+        <p class="hero-product">
+          Your backlog deserves your attention, not your anxiety.
+          <a href="https://brightraven.world/maida/">Maida</a> helps you see what to skip, so the right choice becomes obvious.
+        </p>
         <div class="hero-download">
           <a href="https://devbrightraven.itch.io/maida" class="download-link">Download Maida</a>
         </div>
       </div>
 
-      <div class="hero-bottom">
-      <nav class="hero-links">
-        <a href="mailto:bertram@brightraven.world" aria-label="Email bertram at brightraven.world">Email me</a>
-        <a href="https://github.com/devbrightraven">GitHub</a>
-        <a href="https://devbrightraven.itch.io">itch.io</a>
-        <a href="https://ko-fi.com/devbrightraven">Ko-fi</a>
-      </nav>
-      <nav class="hero-legal" aria-label="Legal">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="tokushoho.html">特商法表記</a>
-      </nav>
+      <!-- Row 3: Links -->
+      <div class="grid-footer">
+        <nav class="hero-links">
+          <a href="mailto:bertram@brightraven.world" aria-label="Email bertram at brightraven.world">Email me</a>
+          <a href="https://github.com/devbrightraven">GitHub</a>
+          <a href="https://devbrightraven.itch.io">itch.io</a>
+          <a href="https://ko-fi.com/devbrightraven">Ko-fi</a>
+        </nav>
+        <nav class="hero-legal" aria-label="Legal">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="tokushoho.html">特商法表記</a>
+        </nav>
       </div>
     </div>
   </section>

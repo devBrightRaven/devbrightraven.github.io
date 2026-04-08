@@ -46,7 +46,16 @@ a:focus-visible {
   border-radius: 2px;
 }
 
-/* ----- hero (single viewport) ----- */
+/* ----- hero (single viewport, CSS Grid) ----- */
+
+/*
+  Grid layout: 3 rows
+  Row 1 (brand):   starts at ~1/6 from top
+  Row 2 (product): centered
+  Row 3 (footer):  near bottom with padding
+
+  Structure is fixed -- content changes won't shift other rows.
+*/
 
 .hero {
   position: relative;
@@ -67,20 +76,24 @@ a:focus-visible {
   animation: fade-in 2s ease-out 0.3s forwards;
 }
 
-.hero-content {
+.hero-grid {
   position: relative;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 1.2fr 0.8fr;
   align-items: center;
-  justify-content: space-between;
-  height: 75vh;
-  height: 75dvh;
-  max-width: 66vw;
-  padding-top: 0;
-  margin-top: -8vh;
+  justify-items: center;
+  text-align: center;
+  width: min(66vw, 800px);
+  height: 85vh;
+  height: 85dvh;
+  padding: 4vh 0 3vh;
   opacity: 0;
   animation: fade-in 1.8s ease-out 0.6s forwards;
+}
+
+/* Row 1: Brand */
+.grid-brand {
+  align-self: end;
 }
 
 .brand {
@@ -95,18 +108,10 @@ a:focus-visible {
   color: var(--text-muted);
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   letter-spacing: 0.04em;
-  margin-bottom: 1.5em;
 }
 
-.hero-middle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: auto;
-}
-
-.hero-bottom {
+/* Row 2: Product */
+.grid-product {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,16 +119,13 @@ a:focus-visible {
 }
 
 .hero-product {
-  font-size: 1.35rem;
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
   color: var(--text-muted);
+  max-width: 580px;
 }
 
 .hero-product a {
   color: var(--text);
-}
-
-.hero-download {
-  margin-top: 0.8rem;
 }
 
 .download-link {
@@ -143,9 +145,13 @@ a:focus-visible {
   opacity: 1;
 }
 
-.hero-contact a {
-  font-size: 1.2rem;
-  color: var(--text-soft);
+/* Row 3: Footer links */
+.grid-footer {
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .hero-links {
@@ -156,7 +162,7 @@ a:focus-visible {
 }
 
 .hero-links a {
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: var(--text-soft);
   letter-spacing: 0.03em;
 }
@@ -166,7 +172,6 @@ a:focus-visible {
   gap: 1.2rem;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 0.8rem;
 }
 
 .hero-legal a {
@@ -183,7 +188,7 @@ a:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-mark,
-  .hero-content {
+  .hero-grid {
     animation: none;
     opacity: 1;
   }
@@ -301,24 +306,17 @@ td {
     padding: 3rem 1.2rem;
   }
 
-  .hero-content {
-    padding: 0 1.2rem;
-  }
-
-  .hero-product {
-    font-size: 1rem;
-  }
-
-  .hero-contact a {
-    font-size: 0.95rem;
-  }
-
-  .hero-links a {
-    font-size: 0.95rem;
+  .hero-grid {
+    width: 90vw;
+    padding: 2vh 0;
   }
 
   .hero-links {
     gap: 1rem;
+  }
+
+  .hero-links a {
+    font-size: 0.95rem;
   }
 
   th,
@@ -340,11 +338,9 @@ td {
 }
 
 @media (max-height: 500px) {
-  .tagline {
-    margin-bottom: 1.2rem;
-  }
-
-  .hero-contact {
-    margin-bottom: 1rem;
+  .hero-grid {
+    grid-template-rows: 1fr 1fr 0.6fr;
+    height: 95vh;
+    height: 95dvh;
   }
 }
