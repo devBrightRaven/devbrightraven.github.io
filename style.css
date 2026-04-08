@@ -38,6 +38,15 @@ a {
 
 a:hover {
   opacity: 0.7;
+  outline: 1px solid var(--text-muted);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+a:active {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 a:focus-visible {
@@ -143,6 +152,13 @@ a:focus-visible {
   background: var(--text);
   color: var(--bg);
   opacity: 1;
+  outline: none;
+}
+
+.download-link:active {
+  outline: none;
+  background: var(--text-muted);
+  color: var(--bg);
 }
 
 /* Row 3: Footer links */
