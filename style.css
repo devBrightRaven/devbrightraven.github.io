@@ -211,15 +211,13 @@ a:focus-visible {
 
 .hero-legal a {
   font-size: 0.75rem;
-  color: var(--text-soft);
-  opacity: 0.6;
+  color: #7a7a7a;
   letter-spacing: 0.03em;
 }
 
 .copyright {
   font-size: 0.7rem;
-  color: var(--text-soft);
-  opacity: 0.4;
+  color: #777;
   letter-spacing: 0.03em;
 }
 
