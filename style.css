@@ -160,6 +160,21 @@ a:focus-visible {
   letter-spacing: 0.03em;
 }
 
+.hero-legal {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.8rem;
+}
+
+.hero-legal a {
+  font-size: 0.75rem;
+  color: var(--text-soft);
+  opacity: 0.6;
+  letter-spacing: 0.03em;
+}
+
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
