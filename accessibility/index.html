@@ -119,7 +119,7 @@
       <p>Honest disclosure of current gaps:</p>
       <ul>
         <li><strong>macOS screen readers not tested.</strong> Maida does not ship macOS as of v0.4.2. If macOS support is added, VoiceOver testing will be added alongside it.</li>
-        <li><strong>Linux screen readers (Orca) not regularly tested.</strong> Linux <code>.deb</code> and <code>.AppImage</code> builds exist, but Orca testing is planned for v0.5.x.</li>
+        <li><strong>Orca (Linux) has architectural limitations.</strong> Orca has been tested with Maida. It does not include a browse-mode equivalent to NVDA, so reading the entire page as a document is not available. This is an Orca design choice, not something Maida can work around. State announcements via live regions work in recent Orca versions. The interaction profile is different from NVDA but Maida is usable under Orca.</li>
         <li><strong>JAWS and Narrator (Windows) not regularly tested.</strong> NVDA is the primary Windows screen reader target. Other screen readers are expected to work but are not validated per release.</li>
         <li><strong>No in-app text-size or high-contrast toggles yet.</strong> The Windows OS-level text scaling setting is honored. Dedicated in-app accessibility preferences are planned for v0.5.x.</li>
         <li><strong>Touch-only input is unsupported.</strong> Maida is designed for keyboard, gamepad, and mouse. Touch handhelds running desktop mode (Steam Deck, ROG Ally) should use keyboard or gamepad input.</li>
