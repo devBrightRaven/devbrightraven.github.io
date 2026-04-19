@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bright Raven World -- Accessibility Statement</title>
+  <meta name="description" content="Accessibility commitments, supported assistive technology, features, and known gaps for brightraven.world, Maida, and related projects.">
+  <style>
+    :root {
+      --bg:#0b0b0b; --panel:#121212; --text:#f1ebe3; --muted:#d2cbc2; --ghost:#b9b0a5;
+      --accent:#dcc4a0; --line:#2a2622; --focus:#e8c840;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{max-width:820px;margin:0 auto;padding:72px 24px 96px}
+    section{padding:48px 0;border-top:1px solid var(--line)}
+    section:first-of-type{border-top:0;padding-top:12px}
+    h1,h2,h3{line-height:1.2;margin:0 0 18px;font-weight:500}
+    h1{font-size:clamp(36px,6vw,56px)}
+    h2{font-size:clamp(24px,3.5vw,32px);color:var(--accent)}
+    h3{font-size:20px;margin:24px 0 10px}
+    p{margin:0 0 16px;color:var(--muted);font-size:16px}
+    ul,ol{color:var(--muted);font-size:16px;padding-left:20px}
+    li{margin-bottom:8px}
+    code{background:var(--panel);padding:1px 6px;border-radius:3px;font-size:14px;font-family:monospace}
+    .lead{color:var(--text);font-size:20px;line-height:1.5;margin:20px 0 20px}
+    .meta{color:var(--ghost);font-size:14px;margin-bottom:28px}
+    .back-home{position:fixed;top:16px;left:16px;color:var(--ghost);text-decoration:none;font-size:16px;z-index:10;letter-spacing:.03em;transition:color .2s;background:var(--bg);padding:6px 10px;border-radius:6px;border:1px solid var(--line)}
+    .back-home:hover{color:var(--text);border-color:var(--text)}
+    a{color:var(--accent)}
+    a:hover{color:var(--text)}
+    kbd{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:2px 6px;font-size:14px;font-family:monospace;color:var(--text)}
+    footer{margin-top:48px;padding-top:48px;border-top:1px solid var(--line);text-align:center;color:var(--ghost);font-size:14px}
+  </style>
+</head>
+<body>
+  <a href="/" class="back-home" aria-label="Back to Bright Raven World">&larr; Bright Raven World</a>
+  <main>
+    <section>
+      <h1>Accessibility Statement</h1>
+      <p class="lead">This page documents accessibility commitments, supported assistive technology, features, and known gaps across brightraven.world and the products hosted here.</p>
+      <p class="meta">Last reviewed: 2026-04-19 · Covers brightraven.world (main site) and Maida v0.4.2.</p>
+      <p>Contents:</p>
+      <ul>
+        <li><a href="#conformance">Conformance target</a></li>
+        <li><a href="#site">brightraven.world (main site)</a></li>
+        <li><a href="#maida">Maida (desktop application)</a></li>
+        <li><a href="#limitations">Known limitations</a></li>
+        <li><a href="#feedback">Report an issue</a></li>
+      </ul>
+    </section>
+
+    <section id="conformance">
+      <h2>Conformance target</h2>
+      <p>We aim for <strong>WCAG 2.2 Level AA</strong> as a baseline across all pages and products, with <strong>Success Criterion 2.3.3 (Animation from Interactions) Level AAA</strong> as an additional target because Maida uses animated transitions to communicate state.</p>
+      <p>We do not claim "fully accessible" status. WCAG does not have such a state. We claim that we actively test, document what we know works, and document what we know does not.</p>
+    </section>
+
+    <section id="site">
+      <h2>brightraven.world (main site)</h2>
+      <p>The main site and the Maida landing page at <a href="/maida/">/maida/</a> are static pages. Accessibility is covered by standard web practices:</p>
+      <ul>
+        <li>Semantic HTML (<code>main</code>, <code>section</code>, <code>nav</code>, <code>h1</code>) for landmark navigation</li>
+        <li>All interactive elements reachable via <kbd>Tab</kbd> / <kbd>Shift+Tab</kbd></li>
+        <li>Decorative SVG marked <code>aria-hidden="true"</code>; icon-only links labeled with <code>aria-label</code></li>
+        <li>Color contrast meets WCAG AA in both light and dark themes; the Maida landing page ships its own theme toggle that respects user preference</li>
+        <li>No keyboard traps, no forced autoplay, no content reflow shifts during interaction</li>
+        <li>Skip-to-main-content link on pages that have fixed header navigation</li>
+      </ul>
+    </section>
+
+    <section id="maida">
+      <h2>Maida (desktop application)</h2>
+      <p>Maida is a Tauri-based desktop app. Its accessibility surface is larger than the static site because the app handles gamepad input, screen reader announcements for state changes, and a handheld-first interaction model. Below is what the internal red-line guardrails translate to in user-visible behavior.</p>
+
+      <h3>Keyboard navigation</h3>
+      <ul>
+        <li>Every interactive control reachable via <kbd>Tab</kbd> / <kbd>Shift+Tab</kbd> in visual order</li>
+        <li><kbd>Enter</kbd> activates buttons; holding <kbd>Enter</kbd> for 3 seconds commits anchor actions (such as anchoring a kata or launching a game)</li>
+        <li><kbd>Space</kbd> on buttons is intentionally suppressed to prevent NVDA browse-mode synthetic clicks from bypassing long-press friction. This is a deliberate safety deviation from default browser behavior, not an oversight</li>
+        <li>Focus order follows visual layout, top-to-bottom and left-to-right</li>
+      </ul>
+
+      <h3>Gamepad navigation</h3>
+      <ul>
+        <li>D-pad and left stick drive focus between controls, mirroring keyboard arrow keys</li>
+        <li>Right stick scrolls long pages (kata list, settings, legal pages) at 1500 px/sec at full deflection, proportional to stick position, with a dead zone of 0.15</li>
+        <li>A button activates focused controls; B button navigates back</li>
+        <li>LB / RB swap between Kamae (preparation) and Rin (presence) views</li>
+        <li>Gamepad focus ring uses both <code>:focus</code> and <code>:focus-visible</code> pseudo-classes; Chromium does not always classify gamepad-driven programmatic focus as keyboard-sourced, so the pairing ensures the ring is always visible</li>
+      </ul>
+
+      <h3>Screen reader announcements</h3>
+      <ul>
+        <li>Tested on <strong>NVDA</strong> (Windows). Other Windows screen readers should work but are not regularly validated per release</li>
+        <li>State changes (TRY, NOT NOW, anchor, undo) announced via live regions rather than assumed-visual</li>
+        <li>The frozen cooldown screen uses two separate live regions to avoid audio stutter: a visual countdown in Arabic digits (<code>font-variant-numeric: tabular-nums</code>) for sighted users, and a spelled-out-numbers announcement track for screen reader users</li>
+        <li>Number spelling tables cover 0 through 30 across all four locales (English, Japanese, Traditional Chinese, Simplified Chinese)</li>
+      </ul>
+
+      <h3>Reduced motion</h3>
+      <ul>
+        <li>The OS-level <code>prefers-reduced-motion</code> setting is honored throughout the app</li>
+        <li>When reduced motion is active, the frozen cooldown screen replaces its per-second ticking countdown with a static "approximately X seconds" message</li>
+        <li>There is no in-app toggle for motion preference. WCAG Success Criterion 2.3.3 (AAA) defers to the user-agent / OS setting; having two controls (OS and app) would create inconsistency</li>
+      </ul>
+
+      <h3>Friction as protection</h3>
+      <p>Certain interactions use deliberate friction to protect against accidental destructive decisions:</p>
+      <ul>
+        <li>Launching a game requires a short TRY tap plus a 3-second hold to anchor the decision; a short tap alone surfaces the game for inspection without launching</li>
+        <li>NOT NOW decisions can be undone exactly once per decision; this prevents infinite retries that would erode deliberate choice</li>
+        <li>Friction thresholds (300ms tap, 3000ms anchor) are documented constants, not shortened for perceived UX speed</li>
+      </ul>
+    </section>
+
+    <section id="limitations">
+      <h2>Known limitations</h2>
+      <p>Honest disclosure of current gaps:</p>
+      <ul>
+        <li><strong>macOS screen readers not tested.</strong> Maida does not ship macOS as of v0.4.2. If macOS support is added, VoiceOver testing will be added alongside it.</li>
+        <li><strong>Linux screen readers (Orca) not regularly tested.</strong> Linux <code>.deb</code> and <code>.AppImage</code> builds exist, but Orca testing is planned for v0.5.x.</li>
+        <li><strong>JAWS and Narrator (Windows) not regularly tested.</strong> NVDA is the primary Windows screen reader target. Other screen readers are expected to work but are not validated per release.</li>
+        <li><strong>No in-app text-size or high-contrast toggles yet.</strong> The Windows OS-level text scaling setting is honored. Dedicated in-app accessibility preferences are planned for v0.5.x.</li>
+        <li><strong>Touch-only input is unsupported.</strong> Maida is designed for keyboard, gamepad, and mouse. Touch handhelds running desktop mode (Steam Deck, ROG Ally) should use keyboard or gamepad input.</li>
+        <li><strong>No skip-to-content landmark in the Maida app shell.</strong> Current navigation is short enough that the value is low, but the pattern will be added for parity with web conventions.</li>
+      </ul>
+    </section>
+
+    <section id="feedback">
+      <h2>Report an issue</h2>
+      <p>If you find an accessibility barrier, please report it. Two channels:</p>
+      <ul>
+        <li>Open an issue on <a href="https://github.com/devBrightRaven/maida/issues">the Maida GitHub repository</a></li>
+        <li>Email <a href="mailto:bertram@brightraven.world">bertram@brightraven.world</a> with "accessibility" in the subject line</li>
+      </ul>
+      <p>We commit to acknowledging accessibility reports within 7 days and to including confirmed fixes in a patch release when feasible.</p>
+    </section>
+
+    <footer>
+      <p><a href="/">&larr; Bright Raven World</a></p>
+    </footer>
+  </main>
+</body>
+</html>
