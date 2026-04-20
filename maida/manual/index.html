@@ -34,8 +34,10 @@
     html[data-theme='light'] .shot-dark{display:none}
     html[data-theme='light'] .shot-light{display:block}
     .caption{font-size:14px;color:var(--ghost);margin-top:8px;text-align:center;font-style:italic}
-    .back-home{position:fixed;top:16px;left:16px;color:var(--ghost);text-decoration:none;font-size:14px;z-index:10;letter-spacing:.03em;transition:color .2s;background:var(--bg);padding:6px 10px;border-radius:6px;border:1px solid var(--line)}
+    .back-home{position:fixed;top:16px;left:16px;color:var(--ghost);text-decoration:none;font-size:14px;z-index:10;letter-spacing:.03em;transition:color .2s,border-color .2s;background:var(--bg);padding:6px 10px;border-radius:6px;border:1px solid var(--line)}
     .back-home:hover{color:var(--text);border-color:var(--text)}
+    .footer-back{display:inline-block;padding:6px 10px;border:1px solid transparent;border-radius:6px;transition:border-color .2s,color .2s}
+    .footer-back:hover{border-color:var(--text);color:var(--text)}
     a{color:var(--accent)}
     a:hover{color:var(--text)}
     kbd{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:2px 6px;font-size:14px;font-family:monospace;color:var(--text)}
@@ -442,7 +444,7 @@
         <span data-lang="zh-cn">联系：<a href="mailto:bertram@brightraven.world">bertram@brightraven.world</a></span>
       </p>
       <p>App Version: v0.4.3 | Manual Version: v0.4.3 | <span data-lang="en">Last updated: 2026-04-20</span><span data-lang="ja">最終更新：2026-04-20</span><span data-lang="zh-tw">最後更新：2026-04-20</span><span data-lang="zh-cn">最后更新：2026-04-20</span></p>
-      <p><a href="https://brightraven.world">&larr; Bright Raven World</a></p>
+      <p><a href="https://brightraven.world" class="footer-back">&larr; Bright Raven World</a></p>
       <p>&copy; 2026 Bright Raven World</p>
     </footer>
 

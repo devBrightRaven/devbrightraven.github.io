@@ -25,8 +25,10 @@
     code{background:var(--panel);padding:1px 6px;border-radius:3px;font-size:14px;font-family:monospace}
     .lead{color:var(--text);font-size:20px;line-height:1.5;margin:20px 0 20px}
     .meta{color:var(--ghost);font-size:14px;margin-bottom:28px}
-    .back-home{position:fixed;top:16px;left:16px;color:var(--ghost);text-decoration:none;font-size:16px;z-index:10;letter-spacing:.03em;transition:color .2s;background:var(--bg);padding:6px 10px;border-radius:6px;border:1px solid var(--line)}
+    .back-home{position:fixed;top:16px;left:16px;color:var(--ghost);text-decoration:none;font-size:14px;z-index:10;letter-spacing:.03em;transition:color .2s,border-color .2s;background:var(--bg);padding:6px 10px;border-radius:6px;border:1px solid var(--line)}
     .back-home:hover{color:var(--text);border-color:var(--text)}
+    .footer-back{display:inline-block;padding:6px 10px;border:1px solid transparent;border-radius:6px;transition:border-color .2s,color .2s}
+    .footer-back:hover{border-color:var(--text);color:var(--text)}
     a{color:var(--accent)}
     a:hover{color:var(--text)}
     kbd{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:2px 6px;font-size:14px;font-family:monospace;color:var(--text)}
@@ -139,7 +141,7 @@
     </section>
 
     <footer>
-      <p><a href="/"><span aria-hidden="true">&larr;</span> Bright Raven World</a></p>
+      <p><a href="/" class="footer-back"><span aria-hidden="true">&larr;</span> Bright Raven World</a></p>
       <p>&copy; 2026 Bright Raven World</p>
     </footer>
   </main>

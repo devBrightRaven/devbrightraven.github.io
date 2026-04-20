@@ -308,11 +308,37 @@ a:focus-visible {
   padding: 4rem 1.5rem;
 }
 
-.back-link {
-  display: inline-block;
-  font-size: 1rem;
+.back-home {
+  position: fixed;
+  top: 16px;
+  left: 16px;
   color: var(--text-soft);
-  margin-bottom: 2rem;
+  text-decoration: none;
+  font-size: 14px;
+  z-index: 10;
+  letter-spacing: 0.03em;
+  transition: color 0.2s, border-color 0.2s;
+  background: var(--bg);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--surface);
+}
+.back-home:hover {
+  color: var(--text);
+  border-color: var(--text);
+  opacity: 1;
+}
+.footer-back {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.footer-back:hover {
+  border-color: var(--text);
+  color: var(--text);
+  opacity: 1;
 }
 
 .page-title {

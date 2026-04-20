@@ -28,7 +28,8 @@
     .download-aux{margin-top:20px}.manual-label{font-size:14px;color:var(--muted);margin-right:8px;vertical-align:middle}
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;text-decoration:none}.skip-link:focus{left:16px;top:16px;width:auto;height:auto;padding:12px 16px;background:var(--accent);color:#111;border-radius:8px;z-index:9999;outline:4px solid var(--focus);outline-offset:3px;box-shadow:0 0 0 6px rgba(0,0,0,.45)}
     .skip-link[data-lang]{display:none!important}
-    .back-home{position:fixed;top:16px;left:16px;color:var(--ghost);text-decoration:none;font-size:14px;z-index:10;letter-spacing:.03em;transition:color .2s}.back-home:hover{color:var(--text)}
+    .back-home{position:fixed;top:16px;left:16px;color:var(--ghost);text-decoration:none;font-size:14px;z-index:10;letter-spacing:.03em;transition:color .2s,border-color .2s;background:var(--bg);padding:6px 10px;border-radius:6px;border:1px solid var(--line)}.back-home:hover{color:var(--text);border-color:var(--text)}
+    .footer-back{display:inline-block;padding:6px 10px;border:1px solid transparent;border-radius:6px;transition:border-color .2s,color .2s}.footer-back:hover{border-color:var(--text);color:var(--text)}
     html.lang-en .skip-link[data-lang="en"],html.lang-ja .skip-link[data-lang="ja"],html.lang-zh-tw .skip-link[data-lang="zh-tw"],html.lang-zh-cn .skip-link[data-lang="zh-cn"]{display:block!important}
     [data-lang]{display:none!important} html.lang-en [data-lang="en"],html.lang-ja [data-lang="ja"],html.lang-zh-tw [data-lang="zh-tw"],html.lang-zh-cn [data-lang="zh-cn"]{display:revert!important}
     .lang-switch{position:fixed;top:16px;right:16px;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.lang-switch button{background:none;border:1px solid #5b5248;color:#cfc7bd;padding:8px 10px;cursor:pointer;border-radius:6px;min-width:44px;min-height:32px}.lang-switch button.active,.lang-switch button.is-active-theme{background:var(--text);color:var(--bg);border-color:var(--text)}.lang-switch button:hover{border-color:var(--text);background:var(--text);color:var(--bg)}.lang-switch button:focus-visible{outline:3px solid var(--focus);outline-offset:2px;box-shadow:0 0 0 4px rgba(0,0,0,.35)}#theme-toggle{min-width:80px;text-align:center} html[data-theme='light'] .cta{background:#4a3a20;color:#f5f0eb} html[data-theme='light'] .mock-title{color:#b9b0a5} html[data-theme='light'] .pill{color:#d2cbc2;border-color:#5b5248} @media (prefers-reduced-motion: reduce){.cta:active{transform:none}.cta:hover{filter:none}}
@@ -211,7 +212,7 @@
       <a href="mailto:bertram@brightraven.world" class="cta cta-ghost"><span data-lang="en">Contact me</span><span data-lang="ja">お問い合わせ</span><span data-lang="zh-tw">聯絡我</span><span data-lang="zh-cn">联系我</span></a>
     </section>
     <footer style="padding:48px 0 0;border-top:1px solid var(--line);text-align:center;color:var(--ghost);font-size:13px">
-      <p><a href="https://brightraven.world" style="color:var(--accent);text-decoration:none">&larr; Bright Raven World</a></p><p>&copy; 2026 Bright Raven World</p>
+      <p><a href="https://brightraven.world" class="footer-back" style="color:var(--accent);text-decoration:none">&larr; Bright Raven World</a></p><p>&copy; 2026 Bright Raven World</p>
     </footer>
   </main>
   <script>
