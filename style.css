@@ -55,54 +55,49 @@ a:focus-visible {
   border-radius: 2px;
 }
 
-/* ----- hero (single viewport, CSS Grid) ----- */
-
-/*
-  Grid layout: 3 rows
-  Row 1 (brand):   starts at ~1/6 from top
-  Row 2 (product): centered
-  Row 3 (footer):  near bottom with padding
-
-  Structure is fixed -- content changes won't shift other rows.
-*/
+/* ----- hero (content-driven layout) ----- */
 
 .hero {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 2rem 1.5rem 1.5rem;
   background: radial-gradient(ellipse at center, #151515 0%, var(--bg) 70%);
   overflow: hidden;
 }
 
 .hero-mark {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
   width: min(60vw, 380px);
   height: auto;
   opacity: 0;
   animation: fade-in 2s ease-out 0.3s forwards;
+  pointer-events: none;
 }
 
 .hero-grid {
   position: relative;
-  display: grid;
-  grid-template-rows: 1fr 1.2fr 0.8fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
-  text-align: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 2rem;
   width: min(66vw, 800px);
-  height: 85vh;
-  height: 85dvh;
-  padding: 4vh 0 3vh;
+  text-align: center;
   opacity: 0;
   animation: fade-in 1.8s ease-out 0.6s forwards;
 }
 
 /* Row 1: Brand */
 .grid-brand {
-  align-self: end;
+  /* flex column default alignment */
 }
 
 .brand {
@@ -119,18 +114,33 @@ a:focus-visible {
   letter-spacing: 0.04em;
 }
 
-/* Row 2: Product */
+/* Row 2: Product (card) */
 .grid-product {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.2rem;
+  background: rgba(26, 26, 26, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(232, 224, 216, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+.grid-product .label {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 .hero-product {
-  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  font-size: 1rem;
   color: var(--text-muted);
-  max-width: 580px;
+  line-height: 1.6;
 }
 
 .hero-product a {
@@ -163,7 +173,6 @@ a:focus-visible {
 
 /* Row 3: Footer */
 .grid-footer {
-  align-self: end;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -346,9 +355,17 @@ td {
     padding: 3rem 1.2rem;
   }
 
+  .hero {
+    padding: 3rem 1rem 1.5rem;
+  }
+
   .hero-grid {
-    width: 90vw;
-    padding: 2vh 0;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .grid-product {
+    padding: 1.5rem;
   }
 
   .hero-links {
@@ -374,13 +391,5 @@ td {
   td {
     padding-top: 0;
     margin-bottom: 1rem;
-  }
-}
-
-@media (max-height: 500px) {
-  .hero-grid {
-    grid-template-rows: 1fr 1fr 0.6fr;
-    height: 95vh;
-    height: 95dvh;
   }
 }
