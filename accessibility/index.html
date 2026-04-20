@@ -39,7 +39,7 @@
     <section>
       <h1>Accessibility Statement</h1>
       <p class="lead">This page documents accessibility commitments, supported assistive technology, features, and known gaps across brightraven.world and the products hosted here.</p>
-      <p class="meta">Last reviewed: 2026-04-19 · Covers brightraven.world (main site) and Maida v0.4.2.</p>
+      <p class="meta">Last reviewed: 2026-04-20 · Covers brightraven.world (main site) and Maida v0.4.2.</p>
       <p>Contents:</p>
       <ul>
         <li><a href="#conformance">Conformance target</a></li>
@@ -124,6 +124,7 @@
         <li><strong>No in-app text-size or high-contrast toggles yet.</strong> The Windows OS-level text scaling setting is honored. Dedicated in-app accessibility preferences are planned for v0.5.x.</li>
         <li><strong>Touch-only input is unsupported.</strong> Maida is designed for keyboard, gamepad, and mouse. Touch handhelds running desktop mode (Steam Deck, ROG Ally) should use keyboard or gamepad input.</li>
         <li><strong>No skip-to-content landmark in the Maida app shell.</strong> Current navigation is short enough that the value is low, but the pattern will be added for parity with web conventions.</li>
+        <li><strong>Linux (WebKitGTK) gamepad quirks.</strong> On Linux, the WebKitGTK runtime that Tauri uses does not expose two browser features Maida relies on: (1) the <code>GamepadHapticActuator</code> API is absent, so the Haptic feedback setting silently has no effect; (2) right-stick analog scroll caps at roughly 75% of the maximum scroll position on long pages. Keyboard, mouse, and D-pad-based navigation are unaffected, and both are disclosed in the app's in-app accessibility notes. Tracked as <a href="https://github.com/devBrightRaven/maida/issues/5">issue #5</a> (haptic) and <a href="https://github.com/devBrightRaven/maida/issues/3">issue #3</a> (scroll cap).</li>
       </ul>
     </section>
 
