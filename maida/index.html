@@ -19,7 +19,7 @@
     h1,h2,h3{line-height:1.12;margin:0 0 18px;font-weight:500} h1{font-size:clamp(40px,7vw,72px)} h2{font-size:clamp(28px,4vw,40px)} h3{font-size:22px;margin-bottom:8px}
     p{margin:0 0 16px;color:var(--muted);font-size:16px} html.lang-en p{font-size:16px} .lead{color:var(--text);font-size:clamp(24px,3vw,32px);line-height:1.35;margin:20px 0 28px} html.lang-en .lead{font-size:clamp(24px,3vw,30px)}
     .strong{color:var(--text)} .label{color:var(--accent);font-size:16px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px} html.lang-en .label{font-size:16px;letter-spacing:.14em}
-    .kanji{color:rgba(220,196,160,.30);font-size:56px;line-height:1; margin:8px 0 20px} .phase{color:var(--accent);font-size:16px;letter-spacing:.10em;text-transform:uppercase;margin:22px 0 10px} html.lang-en .phase{font-size:16px;letter-spacing:.12em}
+    .kanji{color:rgba(220,196,160,.30);font-size:56px;line-height:1; margin:8px 0 20px} .kanji-reading{display:block;font-size:14px;color:var(--ghost);letter-spacing:.35em;margin-top:8px;font-weight:400;opacity:.75} .phase{color:var(--accent);font-size:16px;letter-spacing:.10em;text-transform:uppercase;margin:22px 0 10px} html.lang-en .phase{font-size:16px;letter-spacing:.12em}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.card{background:var(--panel);border:1px solid var(--line);padding:24px;border-radius:10px}.reading{color:#e0d6ca;font-size:16px;margin-bottom:12px} html.lang-en .reading{font-size:16px}
     .visual-anchor{background:linear-gradient(180deg,#171717,#101010);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:24px 0}.mock-window{border:1px solid #3b342e;border-radius:10px;padding:18px;background:#0e0e0e}.mock-title{font-size:16px;color:var(--ghost);margin-bottom:12px} html.lang-en .mock-title{font-size:16px}.mock-game{font-size:26px;color:var(--text);margin-bottom:14px}.mock-actions{display:flex;gap:12px}.pill{padding:8px 14px;border:1px solid #4a4239;border-radius:999px;color:var(--muted);font-size:16px} html.lang-en .pill{font-size:16px}
     .cta{display:inline-block;margin-top:12px;background:var(--accent);color:#111;text-decoration:none;padding:14px 20px;border-radius:6px;font-weight:600;font-size:16px}.cta:hover{filter:brightness(1.04)} .cta:focus-visible{outline:3px solid var(--focus);outline-offset:4px} .cta:active{transform:scale(.98)} html.lang-en .cta{font-size:16px}
@@ -63,7 +63,13 @@
         <span data-lang="zh-tw">你盯著遊戲庫看了三十分鐘，然後把它關掉。</span>
         <span data-lang="zh-cn">你盯着游戏库看了三十分钟，然后把它关掉。</span>
       </h1>
-      <div class="kanji" aria-hidden="true">間</div>
+      <div class="kanji" aria-hidden="true">
+        間
+        <span class="kanji-reading" data-lang="ja">ま</span>
+        <span class="kanji-reading" data-lang="en">ma</span>
+        <span class="kanji-reading" data-lang="zh-tw">ま</span>
+        <span class="kanji-reading" data-lang="zh-cn">ま</span>
+      </div>
       <p class="lead">
         <span data-lang="en">You own hundreds of games. Tonight you launched the one you've already finished twice. Not because it's the best. Because choosing was harder than playing.</span>
         <span data-lang="ja">何百本もある。今夜また、もうクリアしたあのゲームを起動した。一番だからじゃない。選ぶことのほうが、遊ぶことより疲れるから。</span>
