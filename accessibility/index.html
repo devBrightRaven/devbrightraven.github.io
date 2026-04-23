@@ -78,7 +78,7 @@
       <h3>Keyboard navigation</h3>
       <ul>
         <li>Every interactive control reachable via <kbd>Tab</kbd> / <kbd>Shift+Tab</kbd> in visual order</li>
-        <li><kbd>Enter</kbd> activates buttons; holding <kbd>Enter</kbd> for 3 seconds commits anchor actions (such as anchoring a kata or launching a game)</li>
+        <li><kbd>Enter</kbd> activates buttons; holding <kbd>Enter</kbd> for 3 seconds commits ANCHOR actions (such as anchoring a kata or launching a game)</li>
         <li><kbd>Space</kbd> on buttons is intentionally suppressed to prevent NVDA browse-mode synthetic clicks from bypassing long-press friction. This is a deliberate safety deviation from default browser behavior, not an oversight</li>
         <li>Focus order follows visual layout, top-to-bottom and left-to-right</li>
       </ul>
@@ -95,7 +95,7 @@
       <h3>Screen reader announcements</h3>
       <ul>
         <li>Tested on <strong>NVDA</strong> (Windows). Other Windows screen readers should work but are not regularly validated per release</li>
-        <li>State changes (TRY, NOT NOW, anchor, undo) announced via live regions rather than assumed-visual</li>
+        <li>State changes (TRY, NOT NOW, ANCHOR, undo) announced via live regions rather than assumed-visual</li>
         <li>The frozen cooldown screen uses two separate live regions to avoid audio stutter: a visual countdown in Arabic digits (<code>font-variant-numeric: tabular-nums</code>) for sighted users, and a spelled-out-numbers announcement track for screen reader users</li>
         <li>Number spelling tables cover 0 through 30 across all four locales (English, Japanese, Traditional Chinese, Simplified Chinese)</li>
       </ul>
@@ -110,9 +110,9 @@
       <h3>Friction as protection</h3>
       <p>Certain interactions use deliberate friction to protect against accidental destructive decisions:</p>
       <ul>
-        <li>Launching a game requires a short TRY tap plus a 3-second hold to anchor the decision; a short tap alone surfaces the game for inspection without launching</li>
+        <li>Launching a game requires a short TRY tap plus a 3-second hold to ANCHOR the decision; a short tap alone surfaces the game for inspection without launching</li>
         <li>NOT NOW decisions can be undone exactly once per decision; this prevents infinite retries that would erode deliberate choice</li>
-        <li>Friction thresholds (300ms tap, 3000ms anchor) are documented constants, not shortened for perceived UX speed</li>
+        <li>Friction thresholds (300ms tap, 3000ms ANCHOR) are documented constants, not shortened for perceived UX speed</li>
       </ul>
     </section>
 
