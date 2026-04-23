@@ -41,7 +41,7 @@
     <section>
       <h1>Accessibility Statement</h1>
       <p class="lead">This page documents accessibility commitments, supported assistive technology, features, and known gaps across brightraven.world and the products hosted here.</p>
-      <p class="meta">Last reviewed: 2026-04-20 · Covers brightraven.world (main site) and Maida v0.4.2.</p>
+      <p class="meta">Last reviewed: 2026-04-23 · Covers brightraven.world (main site) and Maida v0.4.3.</p>
       <p>Contents:</p>
       <ul>
         <li><a href="#conformance">Conformance target</a></li>
@@ -60,7 +60,7 @@
 
     <section id="site">
       <h2>brightraven.world (main site)</h2>
-      <p>The main site and the Maida landing page at <a href="/maida/">/maida/</a> are static pages. Accessibility is covered by standard web practices:</p>
+      <p>The main site and the Maida landing page at <a href="https://maida.brightraven.world">maida.brightraven.world</a> are static pages. Accessibility is covered by standard web practices:</p>
       <ul>
         <li>Semantic HTML (<code>main</code>, <code>section</code>, <code>nav</code>, <code>h1</code>) for landmark navigation</li>
         <li>All interactive elements reachable via <kbd>Tab</kbd> / <kbd>Shift+Tab</kbd></li>
@@ -120,7 +120,7 @@
       <h2>Known limitations</h2>
       <p>Honest disclosure of current gaps:</p>
       <ul>
-        <li><strong>macOS screen readers not tested.</strong> Maida does not ship macOS as of v0.4.2. If macOS support is added, VoiceOver testing will be added alongside it.</li>
+        <li><strong>macOS screen readers not tested.</strong> Maida does not ship macOS as of v0.4.3. If macOS support is added, VoiceOver testing will be added alongside it.</li>
         <li><strong>Orca (Linux) has architectural limitations.</strong> Orca has been tested with Maida. It does not include a browse-mode equivalent to NVDA, so reading the entire page as a document is not available. This is an Orca design choice, not something Maida can work around. State announcements via live regions work in recent Orca versions. The interaction profile is different from NVDA but Maida is usable under Orca.</li>
         <li><strong>JAWS and Narrator (Windows) not regularly tested.</strong> NVDA is the primary Windows screen reader target. Other screen readers are expected to work but are not validated per release.</li>
         <li><strong>No in-app text-size or high-contrast toggles yet.</strong> The Windows OS-level text scaling setting is honored. Dedicated in-app accessibility preferences are planned for v0.5.x.</li>
