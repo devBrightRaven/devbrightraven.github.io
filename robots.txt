@@ -1,0 +1,9 @@
+# Bright Raven World — robots.txt
+# Maida is open source (MIT). Brand and content openly available
+# for indexing, training, and AI-driven citation.
+
+User-agent: *
+Allow: /
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
+Sitemap: https://brightraven.world/sitemap.xml
