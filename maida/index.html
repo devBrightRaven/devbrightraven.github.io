@@ -30,6 +30,12 @@
     html[data-theme='light'] .lang-switch button:not(.active):not(.is-active-theme){color:var(--muted)}
     .cta-small{padding:8px 14px;font-size:14px;font-weight:500;margin:0 4px}
     .download-aux{margin-top:20px}.manual-label{font-size:14px;color:var(--muted);margin-right:8px;vertical-align:middle}
+    .install-notes{margin-top:32px;padding:18px 20px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+    .install-notes p{font-size:14px;margin:0 0 10px;color:var(--muted);line-height:1.55}
+    .install-notes p:last-child{margin-bottom:0}
+    .install-notes-title{color:var(--text);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px!important}
+    .install-notes strong{color:var(--text);font-weight:500}
+    .install-notes a{color:var(--accent)}
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;text-decoration:none}.skip-link:focus{left:16px;top:16px;width:auto;height:auto;padding:12px 16px;background:var(--accent);color:#111;border-radius:8px;z-index:9999;outline:4px solid var(--focus);outline-offset:3px;box-shadow:0 0 0 6px rgba(0,0,0,.45)}
     .skip-link[data-lang]{display:none!important}
     .back-home{position:fixed;top:16px;left:16px;color:var(--ghost);text-decoration:none;font-size:14px;z-index:10;letter-spacing:.03em;transition:color .2s,border-color .2s;background:var(--bg);padding:6px 10px;border-radius:6px;border:1px solid var(--line)}.back-home:hover{color:var(--text);border-color:var(--text)}
@@ -211,6 +217,28 @@
         </span>
         <a href="manual/" class="cta cta-ghost cta-small"><span data-lang="en">Online</span><span data-lang="ja">オンライン版</span><span data-lang="zh-tw">線上版</span><span data-lang="zh-cn">在线版</span></a>
         <a href="https://gist.github.com/devBrightRaven/b26da3e8aef40d683a92e66e5b783fec" class="cta cta-ghost cta-small"><span data-lang="en">Plain text</span><span data-lang="ja">テキスト版</span><span data-lang="zh-tw">純文字版</span><span data-lang="zh-cn">纯文字版</span></a>
+      </div>
+      <div class="install-notes" role="note" aria-labelledby="install-notes-title">
+        <p class="install-notes-title" id="install-notes-title">
+          <span data-lang="en">First-time install notes</span>
+          <span data-lang="ja">初回インストールの注意</span>
+          <span data-lang="zh-tw">首次安裝注意</span>
+          <span data-lang="zh-cn">首次安装注意</span>
+        </p>
+        <p>
+          <strong>Windows:</strong>
+          <span data-lang="en"> First launch shows a SmartScreen warning ("Windows protected your PC"). Maida isn't code-signed because those certificates cost hundreds per year, which doesn't fit free software made by one person. Click <strong>More info</strong> &rarr; <strong>Run anyway</strong>. Source is open: <a href="https://github.com/devBrightRaven/maida">github.com/devBrightRaven/maida</a> (MIT).</span>
+          <span data-lang="ja"> 初回起動時に SmartScreen 警告(「Windows によって PC が保護されました」)が表示されます。Maida はコード署名されていません(証明書は年数百ドルかかり、個人が作る無料ソフトには合わないため)。<strong>詳細情報</strong> &rarr; <strong>実行</strong> をクリック。ソースは公開されています:<a href="https://github.com/devBrightRaven/maida">github.com/devBrightRaven/maida</a>(MIT)。</span>
+          <span data-lang="zh-tw"> 第一次啟動會出現 SmartScreen 警告(「Windows 已保護您的電腦」)。Maida 未經程式碼簽署,因為付費憑證每年數百美元,對一人開發的免費軟體不合理。請點擊<strong>其他資訊</strong> &rarr; <strong>仍要執行</strong>。原始碼公開:<a href="https://github.com/devBrightRaven/maida">github.com/devBrightRaven/maida</a>(MIT)。</span>
+          <span data-lang="zh-cn"> 第一次启动会出现 SmartScreen 警告(「Windows 已保护你的电脑」)。Maida 未经代码签署,因为付费证书每年数百美元,对一人开发的免费软件不合理。请点击<strong>其他信息</strong> &rarr; <strong>仍要运行</strong>。源代码公开:<a href="https://github.com/devBrightRaven/maida">github.com/devBrightRaven/maida</a>(MIT)。</span>
+        </p>
+        <p>
+          <strong>ROG Ally:</strong>
+          <span data-lang="en"> Set Armoury Crate to gamepad mode, or add Maida to a game profile, so the buttons send gamepad input.</span>
+          <span data-lang="ja"> Armoury Crate をゲームパッドモードに設定するか、Maida をゲームプロファイルに追加してください。ボタンがゲームパッド信号として送信されます。</span>
+          <span data-lang="zh-tw"> 請在 Armoury Crate 設為 gamepad 模式,或將 Maida 加入遊戲 profile,按鍵才會以 gamepad 訊號送入。</span>
+          <span data-lang="zh-cn"> 请在 Armoury Crate 设为 gamepad 模式,或将 Maida 加入游戏 profile,按键才会以 gamepad 信号送入。</span>
+        </p>
       </div>
     </section>
     <section aria-label="Contact" style="margin-top:56px;text-align:center">
