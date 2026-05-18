@@ -1,1113 +1,130 @@
 <!DOCTYPE html>
-<html lang="en" class="lang-en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maida — the space you pass through before you begin</title>
-  <meta name="description" content="Maida helps you stop staring at your game library and start playing.">
+  <title>Maida — at maida.brightraven.world</title>
+  <meta name="description" content="Maida is at maida.brightraven.world. A brief 間(ma) before you play.">
+  <meta http-equiv="refresh" content="6; url=https://maida.brightraven.world/">
   <link rel="canonical" href="https://maida.brightraven.world/">
-  <meta property="og:title" content="Maida — the space you pass through before you begin">
-  <meta property="og:description" content="Maida helps you stop staring at your game library and start playing.">
-  <meta property="og:image" content="https://maida.brightraven.world/screenshots/rinView.png">
-  <meta property="og:url" content="https://maida.brightraven.world/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Maida — the space you pass through before you begin">
-  <meta name="twitter:description" content="Maida helps you stop staring at your game library and start playing.">
-  <meta name="twitter:image" content="https://maida.brightraven.world/screenshots/rinView.png">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Maida",
-    "operatingSystem": "Windows, Linux",
-    "applicationCategory": "UtilitiesApplication",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Maida helps you stop staring at your game library and start playing.",
-    "url": "https://maida.brightraven.world/",
-    "author": { "@type": "Organization", "name": "Bright Raven World", "url": "https://brightraven.world/" },
-    "image": "https://maida.brightraven.world/screenshots/rinView.png"
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="robots" content="noindex">
   <style>
-    /* ═══════════════════════════════════════════
-       DESIGN TOKENS (see design-tokens.md v1.0)
-       ═══════════════════════════════════════════ */
     :root {
-      /* dark mode (default) */
       --bg: #0b0b0b;
-      --panel: #121212;
       --text: #f1ebe3;
       --muted: #d2cbc2;
       --ghost: #b9b0a5;
       --accent: #dcc4a0;
-      --line: #2a2622;
       --focus: #e8c840;
-
-      /* typography */
-      --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
-      --font-display: "Newsreader", "Source Serif 4", Georgia, serif;
-      --fs-h1: clamp(40px, 7vw, 72px);
-      --fs-h2: clamp(28px, 4vw, 40px);
-      --fs-h3: clamp(19px, 2.2vw, 22px);
-      --fs-lead: clamp(22px, 3vw, 28px);
-      --fs-body: 17px;
-      --fs-caption: 14px;
-      --fs-micro: 12px;
-      --fs-phase-kanji: clamp(64px, 8vw, 96px);
-      --lh-tight: 1.12;
-      --lh-snug: 1.25;
-      --lh-normal: 1.65;
-      --lh-relaxed: 1.5;
-
-      /* spacing */
-      --space-section-major: 128px;
-      --space-section: 96px;
-      --space-block: 48px;
-      --space-stack-lg: 28px;
-      --space-stack: 18px;
-      --space-stack-sm: 12px;
-      --space-inline: 8px;
-
-      /* motion */
-      --transition-base: 0.2s ease;
-      --transition-slow: 0.4s ease;
     }
-
-    html[data-theme='light'] {
-      --bg: #f5f0eb;
-      --panel: #ebe5de;
-      --text: #1c1712;
-      --muted: #4f4942;
-      --ghost: #584f45;
-      --accent: #544125;
-      --line: #cfc5bb;
-      --focus: #9a6f00;
-    }
-
-    /* ═══════════════════════════════════════════
-       BASE
-       ═══════════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: var(--font-body);
-      font-size: var(--fs-body);
-      line-height: var(--lh-normal);
+      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
     }
-
     main {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 72px 24px var(--space-section-major);
+      max-width: 560px;
+      text-align: center;
       position: relative;
     }
-
-    section {
-      padding: var(--space-section) 0;
-    }
-
-    section:first-of-type {
-      padding-top: 0;
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 var(--space-stack);
-    }
-
-    h1 {
-      font-family: var(--font-display);
-      font-size: var(--fs-h1);
-      font-weight: 400;
-      line-height: var(--lh-tight);
-      letter-spacing: -0.01em;
-    }
-
-    h2 {
-      font-family: var(--font-display);
-      font-size: var(--fs-h2);
-      font-weight: 500;
-      line-height: var(--lh-snug);
-    }
-
-    h3 {
-      font-family: var(--font-body);
-      font-size: var(--fs-h3);
-      font-weight: 600;
-      line-height: var(--lh-snug);
-      letter-spacing: 0.01em;
-      margin-top: var(--space-block);
-      margin-bottom: var(--space-stack-sm);
+    h1.wordmark {
       color: var(--accent);
-    }
-
-    p {
-      margin: 0 0 var(--space-stack-lg);
-      color: var(--muted);
-      font-size: var(--fs-body);
-      line-height: var(--lh-normal);
-    }
-
-    p:last-child {
-      margin-bottom: 0;
-    }
-
-    .lead {
-      color: var(--text);
-      font-family: var(--font-display);
-      font-size: var(--fs-lead);
-      font-weight: 400;
-      line-height: var(--lh-relaxed);
-      margin: var(--space-stack) 0 var(--space-stack-lg);
-    }
-
-    .strong {
-      color: var(--text);
-      font-family: var(--font-display);
-      font-size: var(--fs-lead);
-      font-weight: 500;
-      line-height: var(--lh-relaxed);
-    }
-
-    .label {
-      color: var(--accent);
-      font-size: var(--fs-caption);
+      font-size: 14px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       font-weight: 500;
-      margin-bottom: var(--space-stack);
+      margin-bottom: 32px;
+      line-height: 1;
     }
-
-    a {
-      color: var(--accent);
-      transition: color var(--transition-base);
-    }
-
-    a:hover {
-      color: var(--text);
-    }
-
-    code {
-      font-family: var(--font-mono, ui-monospace, "SF Mono", Consolas, monospace);
-      font-size: 0.92em;
-      background: var(--panel);
-      padding: 2px 6px;
-      border-radius: 3px;
-    }
-
-    ul {
-      margin: 0 0 var(--space-stack-lg);
-      padding-left: 20px;
-    }
-
-    ul li {
-      color: var(--muted);
-      font-size: var(--fs-body);
-      line-height: var(--lh-normal);
-      margin-bottom: var(--space-stack-sm);
-    }
-
-    /* ═══════════════════════════════════════════
-       HERO (with 間 kanji bleeding off right)
-       ═══════════════════════════════════════════ */
-    .section-hero {
-      position: relative;
-      overflow: hidden;
-      padding-top: 12px;
-      padding-bottom: var(--space-section-major);
-    }
-
-    .hero-kanji {
-      position: absolute;
-      top: -6%;
-      right: -12%;
-      font-size: clamp(280px, 50vw, 560px);
+    .kanji {
+      font-size: clamp(96px, 22vw, 140px);
       line-height: 0.85;
-      color: var(--accent);
-      opacity: 0.14;
-      font-family: var(--font-display);
-      font-weight: 400;
+      color: rgba(220, 196, 160, 0.18);
+      font-family: Georgia, serif;
+      margin-bottom: 36px;
       letter-spacing: -0.04em;
-      pointer-events: none;
       user-select: none;
-      z-index: 0;
     }
-
-    html[data-theme='light'] .hero-kanji {
-      opacity: 0.20;
-    }
-
-    .section-hero > *:not(.hero-kanji) {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-sub {
-      font-size: var(--fs-caption);
-      color: var(--ghost);
-      letter-spacing: 0.08em;
-      font-family: var(--font-body);
-      margin: 0 0 var(--space-block);
-      font-weight: 500;
-    }
-
-    /* ═══════════════════════════════════════════
-       PHASE BLOCK (Kamae / Rin) - horizontal
-       ═══════════════════════════════════════════ */
-    .phase-block {
-      display: flex;
-      align-items: baseline;
-      gap: 24px;
-      margin: var(--space-block) 0 var(--space-stack-lg);
-    }
-
-    .phase-kanji {
-      font-family: var(--font-display);
-      font-size: var(--fs-phase-kanji);
-      font-weight: 400;
-      color: var(--accent);
-      line-height: 0.9;
-      letter-spacing: -0.02em;
-      flex-shrink: 0;
-    }
-
-    .phase-text {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .phase-roma {
-      font-size: var(--fs-caption);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    .phase-gloss {
-      font-family: var(--font-display);
-      font-size: var(--fs-h3);
-      color: var(--muted);
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    /* ═══════════════════════════════════════════
-       STEP CARDS
-       ═══════════════════════════════════════════ */
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin: var(--space-stack-lg) 0 var(--space-block);
-    }
-
-    .card {
-      background: var(--panel);
-      padding: 24px;
-      border-radius: 6px;
-    }
-
-    .card h3 {
-      margin: 0 0 var(--space-stack-sm);
-      color: var(--accent);
-      font-size: var(--fs-caption);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: var(--fs-body);
-    }
-
-    /* ═══════════════════════════════════════════
-       SCREENSHOTS
-       ═══════════════════════════════════════════ */
-    .screenshot {
-      margin: var(--space-block) 0;
-      border-radius: 8px;
-      overflow: hidden;
-      background: var(--panel);
-    }
-
-    .screenshot img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .screenshot img.shot-light { display: none; }
-    html[data-theme='light'] .screenshot img.shot-dark { display: none; }
-    html[data-theme='light'] .screenshot img.shot-light { display: block; }
-
-    /* ═══════════════════════════════════════════
-       CTAs
-       ═══════════════════════════════════════════ */
-    .cta {
-      display: inline-block;
-      background: var(--accent);
-      color: #111;
-      text-decoration: none;
-      padding: 14px 22px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: var(--fs-caption);
-      letter-spacing: 0.04em;
-      transition: filter var(--transition-base);
-      min-height: 44px;
-    }
-
-    html[data-theme='light'] .cta {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    .cta:hover { filter: brightness(1.04); color: #111; }
-    html[data-theme='light'] .cta:hover { color: var(--bg); }
-    .cta:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
-    .cta:active { transform: scale(0.98); }
-
-    .cta-ghost {
-      background: transparent;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      font-weight: 500;
-    }
-
-    .cta-ghost:hover {
-      background: var(--accent);
-      color: var(--bg);
-      filter: none;
-    }
-
-    html[data-theme='light'] .cta-ghost {
-      background: transparent;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-    }
-
-    html[data-theme='light'] .cta-ghost:hover {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    .cta-small {
-      padding: 8px 14px;
-      font-size: var(--fs-caption);
-      font-weight: 500;
-      margin: 0 4px;
-      min-height: auto;
-    }
-
-    .github-aux {
-      margin: var(--space-stack-sm) 0 var(--space-stack-lg);
-      font-size: var(--fs-caption);
+    .spirit {
+      font-size: 17px;
+      color: var(--text);
+      margin-bottom: 12px;
       line-height: 1.6;
     }
-
-    .github-aux a {
-      color: var(--ghost);
+    .spirit.alt {
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .link {
+      display: inline-block;
+      margin-top: 36px;
+      color: var(--accent);
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding: 4px 0;
-      transition: color var(--transition-base), border-color var(--transition-base);
+      font-size: 16px;
+      border-bottom: 1px solid var(--accent);
+      padding: 6px 2px;
+      letter-spacing: 0.02em;
+      transition: color 0.2s, border-color 0.2s;
     }
-
-    .github-aux a:hover {
+    .link:hover {
       color: var(--text);
-      border-bottom-color: var(--ghost);
+      border-bottom-color: var(--text);
     }
-
-    .github-aux a:focus-visible {
+    .link:focus-visible {
       outline: 3px solid var(--focus);
-      outline-offset: 3px;
+      outline-offset: 4px;
       border-radius: 2px;
     }
-
-    .download-aux {
-      margin-top: var(--space-block);
+    .redirect-note {
+      font-size: 13px;
+      color: var(--ghost);
+      margin-top: 24px;
+      letter-spacing: 0.02em;
     }
-
-    .manual-label {
-      font-size: var(--fs-caption);
-      color: var(--muted);
-      margin-right: 8px;
-      vertical-align: middle;
-    }
-
-    /* ═══════════════════════════════════════════
-       CHROME (skip link, back home, lang/theme switch)
-       ═══════════════════════════════════════════ */
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      text-decoration: none;
-    }
-
-    .skip-link:focus {
-      left: 16px;
-      top: 16px;
-      width: auto;
-      height: auto;
-      padding: 12px 16px;
-      background: var(--accent);
-      color: var(--bg);
-      border-radius: 8px;
-      z-index: 9999;
-      outline: 4px solid var(--focus);
-      outline-offset: 3px;
-      box-shadow: 0 0 0 6px rgba(0,0,0,.45);
-    }
-
-    .skip-link[data-lang] { display: none !important; }
-    html.lang-en .skip-link[data-lang="en"],
-    html.lang-ja .skip-link[data-lang="ja"],
-    html.lang-zh-tw .skip-link[data-lang="zh-tw"],
-    html.lang-zh-cn .skip-link[data-lang="zh-cn"] { display: block !important; }
-
     .back-home {
       position: fixed;
       top: 16px;
       left: 16px;
       color: var(--ghost);
       text-decoration: none;
-      font-size: var(--fs-caption);
-      z-index: 10;
-      letter-spacing: 0.03em;
-      background: var(--bg);
+      font-size: 13px;
       padding: 8px 12px;
+      border: 1px solid rgba(185, 176, 165, 0.3);
       border-radius: 6px;
-      border: 1px solid var(--line);
-      transition: color var(--transition-base), border-color var(--transition-base);
+      transition: color 0.2s, border-color 0.2s;
     }
-
     .back-home:hover {
       color: var(--text);
       border-color: var(--text);
     }
-
-    .footer-back {
-      display: inline-block;
-      padding: 8px 12px;
-      border: 1px solid transparent;
-      border-radius: 6px;
-      transition: border-color var(--transition-base), color var(--transition-base);
-    }
-
-    .footer-back:hover {
-      border-color: var(--text);
-      color: var(--text);
-    }
-
-    [data-lang] { display: none !important; }
-    html.lang-en [data-lang="en"],
-    html.lang-ja [data-lang="ja"],
-    html.lang-zh-tw [data-lang="zh-tw"],
-    html.lang-zh-cn [data-lang="zh-cn"] { display: revert !important; }
-
-    .lang-switch {
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      z-index: 10;
-    }
-
-    .lang-switch button {
-      background: var(--bg);
-      border: 1px solid #5b5248;
-      color: #cfc7bd;
-      padding: 8px 10px;
-      cursor: pointer;
-      border-radius: 6px;
-      min-width: 44px;
-      min-height: 32px;
-      font-family: var(--font-body);
-    }
-
-    .lang-switch button.active,
-    .lang-switch button.is-active-theme {
-      background: var(--text);
-      color: var(--bg);
-      border-color: var(--text);
-    }
-
-    .lang-switch button:hover {
-      border-color: var(--text);
-      background: var(--text);
-      color: var(--bg);
-    }
-
-    .lang-switch button:focus-visible {
+    .back-home:focus-visible {
       outline: 3px solid var(--focus);
       outline-offset: 2px;
-      box-shadow: 0 0 0 4px rgba(0,0,0,0.35);
     }
-
-    html[data-theme='light'] .lang-switch button:not(.active):not(.is-active-theme) {
-      color: var(--muted);
-    }
-
-    #theme-toggle {
-      min-width: 80px;
-      text-align: center;
-    }
-
-    /* ═══════════════════════════════════════════
-       A11Y / RESPONSIVE
-       ═══════════════════════════════════════════ */
-    .sr-only {
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      padding: 0 !important;
-      margin: -1px !important;
-      overflow: hidden !important;
-      clip: rect(0,0,0,0) !important;
-      white-space: nowrap !important;
-      border: 0 !important;
-    }
-
-    @media (max-width: 720px) {
-      :root {
-        --space-section-major: 80px;
-        --space-section: 64px;
-      }
-      .grid { grid-template-columns: 1fr; }
-      .hero-kanji { font-size: clamp(220px, 70vw, 360px); right: -18%; }
-      .phase-block { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .phase-kanji { font-size: clamp(56px, 16vw, 72px); }
-      main { padding: 64px 20px var(--space-section-major); }
-    }
-
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      .cta:active { transform: none; }
-      .cta:hover { filter: none; }
+      .link, .back-home { transition: none; }
     }
   </style>
 </head>
 <body>
-  <a href="#main" class="skip-link" data-lang="en">Skip to main content</a>
-  <a href="#main" class="skip-link" data-lang="ja">メインコンテンツへスキップ</a>
-  <a href="#main" class="skip-link" data-lang="zh-tw">跳到主要內容</a>
-  <a href="#main" class="skip-link" data-lang="zh-cn">跳到主要内容</a>
+  <a href="https://brightraven.world" class="back-home" aria-label="Back to Bright Raven World">← Bright Raven World</a>
+  <main>
+    <h1 class="wordmark">Maida</h1>
+    <div class="kanji" aria-hidden="true">間</div>
 
-  <nav aria-label="Back navigation">
-    <a href="https://brightraven.world" class="back-home" aria-label="Back to Bright Raven World">← Back</a>
-  </nav>
+    <p class="spirit" lang="en">Maida is a brief 間(ma): one game shown, TRY or not now, then it steps back so you can play.</p>
+    <p class="spirit alt" lang="ja">Maida は、束の間(ま)。一本だけ見せて、やるかやらないか、そして退く。</p>
+    <p class="spirit alt" lang="zh-Hant">Maida 是短暫的間(ま)。一次一款，現在玩或現在不要，然後它退開讓你玩。</p>
+    <p class="spirit alt" lang="zh-Hans">Maida 是短暂的间(ま)。一次一款，现在玩或现在不要，然后它退开让你玩。</p>
 
-  <nav class="lang-switch" aria-label="Language switcher and theme toggle">
-    <button class="active" data-set-lang="en" type="button">EN</button>
-    <button data-set-lang="ja" type="button">JA</button>
-    <button data-set-lang="zh-cn" type="button">简</button>
-    <button data-set-lang="zh-tw" type="button">繁</button>
-    <button id="theme-toggle" type="button" aria-label="Switch theme">Dark</button>
-  </nav>
-
-  <main id="main">
-
-    <section class="section-hero" aria-labelledby="hero-title">
-      <div class="hero-kanji" aria-hidden="true">間</div>
-      <div class="label">Maida</div>
-      <h1 id="hero-title">
-        <span data-lang="en">You stared at your library for thirty minutes, then closed it.</span>
-        <span data-lang="ja">ライブラリを30分見つめて、閉じた。</span>
-        <span data-lang="zh-tw">你盯著遊戲庫看了三十分鐘，然後把它關掉。</span>
-        <span data-lang="zh-cn">你盯着游戏库看了三十分钟，然后把它关掉。</span>
-      </h1>
-      <p class="hero-sub">
-        <span data-lang="en">ma · the space you pass through</span>
-        <span data-lang="ja">ま · 通り過ぎる間</span>
-        <span data-lang="zh-tw">ま · 你經過的那段時空</span>
-        <span data-lang="zh-cn">ま · 你经过的那段时空</span>
-      </p>
-      <p class="lead">
-        <span data-lang="en">You own hundreds of games. Tonight you launched the one you've already finished twice. Not because it's the best. Because choosing was harder than playing.</span>
-        <span data-lang="ja">何百本もある。今夜また、もうクリアしたあのゲームを起動した。一番だからじゃない。選ぶことのほうが、遊ぶことより疲れるから。</span>
-        <span data-lang="zh-tw">你有幾百款遊戲。你今晚又打開了那款已經玩過很多次的。不是因為它最好。是因為選擇本身讓你太累了。</span>
-        <span data-lang="zh-cn">你有几百款游戏。今晚你又打开了那款已经通关过的。不是因为它最好。是因为选择本身让你太累了。</span>
-      </p>
-      <p class="strong">
-        <span data-lang="en">Maida doesn't help you choose better. Maida lets you stop choosing.</span>
-        <span data-lang="ja">Maida はより良い選択を助けない。選ぶことを止めさせる。</span>
-        <span data-lang="zh-tw">Maida 不幫你選得更好。Maida 讓你不用選。</span>
-        <span data-lang="zh-cn">Maida 不帮你选得更好。Maida 让你不用选。</span>
-      </p>
-    </section>
-
-    <section aria-labelledby="problem-title">
-      <div class="label">
-        <span data-lang="en">The problem</span>
-        <span data-lang="ja">問題の正体</span>
-        <span data-lang="zh-tw">問題</span>
-        <span data-lang="zh-cn">问题</span>
-      </div>
-      <h2 id="problem-title">
-        <span data-lang="en">Your time to play shouldn't be stuck with choices.</span>
-        <span data-lang="ja">遊ぶための時間が、選択で潰れるなんておかしい。</span>
-        <span data-lang="zh-tw">留給遊戲的時間，不應該浪費在選擇上。</span>
-        <span data-lang="zh-cn">留给游戏的时间，不应该浪费在选择上。</span>
-      </h2>
-      <p>
-        <span data-lang="en">This isn't laziness. It isn't pickiness. It isn't that you don't love games anymore.</span>
-        <span data-lang="ja">怠けじゃない。飽きたわけでもない。ゲームが嫌いになったわけでもない。</span>
-        <span data-lang="zh-tw">這不是懶惰。不是你變挑。不是你不再愛玩遊戲了。</span>
-        <span data-lang="zh-cn">这不是懒惰。不是你变挑了。不是你不爱玩游戏了。</span>
-      </p>
-      <p>
-        <span data-lang="en">More options doesn't always mean more freedom. Sometimes it just means paralysis.</span>
-        <span data-lang="ja">選択肢が多いほど自由とは限らない。ただ麻痺するだけのこともある。</span>
-        <span data-lang="zh-tw">選項越多，不一定越自由。有時候只是更麻痺。</span>
-        <span data-lang="zh-cn">选项越多，不一定越自由。有时候只是更麻痹。</span>
-      </p>
-      <p>
-        <span data-lang="en">You don't need more information to decide. You need fewer things to decide between.</span>
-        <span data-lang="ja">決めるための情報がもっと必要なんじゃない。決める対象がもっと少なければいい。</span>
-        <span data-lang="zh-tw">你不是需要更多資訊來決定。你需要更少東西讓你決定。</span>
-        <span data-lang="zh-cn">你不是需要更多信息来做决定。你需要更少的东西让你去选。</span>
-      </p>
-    </section>
-
-    <section aria-labelledby="what-title">
-      <div class="label">
-        <span data-lang="en">What Maida is</span>
-        <span data-lang="ja">Maida とは</span>
-        <span data-lang="zh-tw">Maida 是什麼</span>
-        <span data-lang="zh-cn">Maida 是什么</span>
-      </div>
-      <h2 id="what-title">
-        <span data-lang="en">Maida is a brief 間 (ma). Then you play.</span>
-        <span data-lang="ja">Maida は、束の間 (ま)。そして、遊ぶ。</span>
-        <span data-lang="zh-tw">Maida 是短暫的「間」。然後去玩。</span>
-        <span data-lang="zh-cn">Maida 是短暂的「间」。然后去玩。</span>
-      </h2>
-      <p>
-        <span data-lang="en">Maida shows you one game at a time. From what you already have installed. You answer: play it now, or not now.</span>
-        <span data-lang="ja">Maida は一度に一本だけ見せる。インストール済みのゲームの中から。答えは二つ：今やる、か、今はやらない。</span>
-        <span data-lang="zh-tw">Maida 每次只給你看一款遊戲。從你已經安裝的遊戲中。你回答：現在玩，或現在不要。</span>
-        <span data-lang="zh-cn">Maida 每次只给你看一款游戏。从你已经安装的游戏中。你回答：现在玩，或现在不要。</span>
-      </p>
-      <p>
-        <span data-lang="en">It's not a recommendation engine. Not a backlog tracker. Not a system that pretends to know you better than you know yourself.</span>
-        <span data-lang="ja">レコメンドエンジンじゃない。バックログ管理ツールでもない。あなたより「あなたをわかっている」ふりをするシステムでもない。</span>
-        <span data-lang="zh-tw">它不是推薦引擎。不是待辦清單。不是一個假裝比你更懂你的系統。</span>
-        <span data-lang="zh-cn">它不是推荐引擎。不是待办清单。不是一个假装比你更懂你的系统。</span>
-      </p>
-      <figure class="screenshot">
-        <img src="screenshots/rinView.png" alt="Maida Rin view showing one game at a time with Play and Not Now options" class="shot-dark">
-        <img src="screenshots/rinView_l.png" alt="Maida Rin view showing one game at a time with Play and Not Now options" class="shot-light">
-      </figure>
-    </section>
-
-    <section aria-labelledby="how-title">
-      <div class="label">
-        <span data-lang="en">How it works</span>
-        <span data-lang="ja">使い方</span>
-        <span data-lang="zh-tw">如何運作</span>
-        <span data-lang="zh-cn">如何运作</span>
-      </div>
-      <h2 id="how-title">
-        <span data-lang="en">Eighty options become one.</span>
-        <span data-lang="ja">80の選択肢が、1つになる。</span>
-        <span data-lang="zh-tw">把 80 個選項變成 1 個。</span>
-        <span data-lang="zh-cn">把 80 个选项变成 1 个。</span>
-      </h2>
-
-      <div class="phase-block">
-        <div class="phase-kanji" aria-hidden="true">構</div>
-        <div class="phase-text">
-          <div class="phase-roma">kamae</div>
-          <div class="phase-gloss">
-            <span data-lang="en">preparing the field</span>
-            <span data-lang="ja">場を整える</span>
-            <span data-lang="zh-tw">整理場域</span>
-            <span data-lang="zh-cn">整理场域</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid" aria-label="Kamae steps">
-        <div class="card">
-          <h3>
-            <span data-lang="en">Step 1</span>
-            <span data-lang="ja">手順1</span>
-            <span data-lang="zh-tw">第一步</span>
-            <span data-lang="zh-cn">第一步</span>
-          </h3>
-          <p>
-            <span data-lang="en">Open Maida. It reads your locally installed Steam games.</span>
-            <span data-lang="ja">Maidaを開く。ローカルのSteamゲームを読み取る。</span>
-            <span data-lang="zh-tw">打開 Maida。它讀取你本機已安裝的 Steam 遊戲。</span>
-            <span data-lang="zh-cn">打开 Maida。它读取你本机已安装的 Steam 游戏。</span>
-          </p>
-        </div>
-        <div class="card">
-          <h3>
-            <span data-lang="en">Step 2</span>
-            <span data-lang="ja">手順2</span>
-            <span data-lang="zh-tw">第二步</span>
-            <span data-lang="zh-cn">第二步</span>
-          </h3>
-          <p>
-            <span data-lang="en">Optionally, narrow the field. Use Kata to face only what you're willing to face today.</span>
-            <span data-lang="ja">必要なら場を整える。型で、今日向き合いたいものだけに絞る。</span>
-            <span data-lang="zh-tw">如果你想，先整理場域。用型，只面對你今天願意面對的。</span>
-            <span data-lang="zh-cn">如果你想，先整理场域。用型，只面对你今天愿意面对的。</span>
-          </p>
-        </div>
-      </div>
-
-      <figure class="screenshot">
-        <img src="screenshots/kamaeView_kata_2.png" alt="Maida Kamae view showing two katas side by side with one active" class="shot-dark">
-        <img src="screenshots/kamaeView_kata_2_l.png" alt="Maida Kamae view showing two katas side by side with one active" class="shot-light">
-      </figure>
-
-      <div class="phase-block">
-        <div class="phase-kanji" aria-hidden="true">臨</div>
-        <div class="phase-text">
-          <div class="phase-roma">rin</div>
-          <div class="phase-gloss">
-            <span data-lang="en">facing the one</span>
-            <span data-lang="ja">一つに臨む</span>
-            <span data-lang="zh-tw">面對那一款</span>
-            <span data-lang="zh-cn">面对那一款</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid" aria-label="Rin steps">
-        <div class="card">
-          <h3>
-            <span data-lang="en">Step 3</span>
-            <span data-lang="ja">手順3</span>
-            <span data-lang="zh-tw">第三步</span>
-            <span data-lang="zh-cn">第三步</span>
-          </h3>
-          <p>
-            <span data-lang="en">One game appears. Not a list. Not a comparison. Just one.</span>
-            <span data-lang="ja">一本が現れる。リストじゃない。比較表でもない。ただ一本。</span>
-            <span data-lang="zh-tw">一款遊戲出現。不是清單。不是比較表。就是一款。</span>
-            <span data-lang="zh-cn">一款游戏出现。不是清单。不是比较表。就是一款。</span>
-          </p>
-        </div>
-        <div class="card">
-          <h3>
-            <span data-lang="en">Step 4</span>
-            <span data-lang="ja">手順4</span>
-            <span data-lang="zh-tw">第四步</span>
-            <span data-lang="zh-cn">第四步</span>
-          </h3>
-          <p>
-            <span data-lang="en">Then it steps back. A tool that did its job disappears quietly.</span>
-            <span data-lang="ja">そして退く。仕事を終えた道具は、静かに消える。</span>
-            <span data-lang="zh-tw">然後它退開。完成工作的工具安靜地退下。</span>
-            <span data-lang="zh-cn">然后它退开。完成工作的工具安静地退下。</span>
-          </p>
-        </div>
-      </div>
-
-      <figure class="screenshot">
-        <img src="screenshots/rinView_undo.png" alt="Rin view showing TRY and a crossed-out NOT NOW with one-time UNDO button" class="shot-dark">
-        <img src="screenshots/rinView_undo_l.png" alt="Rin view showing TRY and a crossed-out NOT NOW with one-time UNDO button" class="shot-light">
-      </figure>
-    </section>
-
-    <section aria-labelledby="refuse-title">
-      <div class="label">
-        <span data-lang="en">What Maida refuses</span>
-        <span data-lang="ja">Maidaが拒むこと</span>
-        <span data-lang="zh-tw">Maida 拒絕做的事</span>
-        <span data-lang="zh-cn">Maida 拒绝做的事</span>
-      </div>
-      <h2 id="refuse-title">
-        <span data-lang="en">What it won't do matters as much as what it does.</span>
-        <span data-lang="ja">やらないことは、やることと同じだけ重い。</span>
-        <span data-lang="zh-tw">它刻意不做的事，和它做的事一樣重要。</span>
-        <span data-lang="zh-cn">它刻意不做的事，和它做的事一样重要。</span>
-      </h2>
-
-      <h3>
-        <span data-lang="en">No recommendations</span>
-        <span data-lang="ja">レコメンドなし</span>
-        <span data-lang="zh-tw">沒有推薦</span>
-        <span data-lang="zh-cn">没有推荐</span>
-      </h3>
-      <p>
-        <span data-lang="en">The game you see is one you already own. Nothing "trending", nothing "suggested for you".</span>
-        <span data-lang="ja">表示されるのはあなたが既に所有しているゲームだけ。「人気」も「おすすめ」もありません。</span>
-        <span data-lang="zh-tw">出現的遊戲是你本來就擁有的。沒有「熱門」，沒有「你可能喜歡」。</span>
-        <span data-lang="zh-cn">出现的游戏是你本来就拥有的。没有「热门」，没有「你可能喜欢」。</span>
-      </p>
-
-      <h3>
-        <span data-lang="en">No tracking</span>
-        <span data-lang="ja">追跡なし</span>
-        <span data-lang="zh-tw">沒有追蹤</span>
-        <span data-lang="zh-cn">没有追踪</span>
-      </h3>
-      <p>
-        <span data-lang="en">Maida only knows your TRY / Not Now choices, and those stay on your device.</span>
-        <span data-lang="ja">Maida が知るのは TRY か Not Now の選択のみで、端末内に留まります。</span>
-        <span data-lang="zh-tw">Maida 只知道你按了 TRY 還是 Not Now，這個紀錄只在你的裝置上。</span>
-        <span data-lang="zh-cn">Maida 只知道你按了 TRY 还是 Not Now，这个记录只在你的设备上。</span>
-      </p>
-
-      <h3>
-        <span data-lang="en">No streaks, no achievements</span>
-        <span data-lang="ja">ストリークなし、実績なし</span>
-        <span data-lang="zh-tw">沒有連續登入，沒有成就</span>
-        <span data-lang="zh-cn">没有连续登录，没有成就</span>
-      </h3>
-      <p>
-        <span data-lang="en">Nothing you can lose by not opening the app.</span>
-        <span data-lang="ja">開かなかったことで失うものはありません。</span>
-        <span data-lang="zh-tw">沒有不開就會扣的分數。</span>
-        <span data-lang="zh-cn">没有不开就会扣的分数。</span>
-      </p>
-
-      <h3>
-        <span data-lang="en">No notifications</span>
-        <span data-lang="ja">通知なし</span>
-        <span data-lang="zh-tw">沒有通知</span>
-        <span data-lang="zh-cn">没有通知</span>
-      </h3>
-      <p>
-        <span data-lang="en">Nothing calling you back.</span>
-        <span data-lang="ja">呼び戻すものはありません。</span>
-        <span data-lang="zh-tw">沒有叫你回來的東西。</span>
-        <span data-lang="zh-cn">没有叫你回来的东西。</span>
-      </p>
-
-      <p style="margin-top: var(--space-block);">
-        <span data-lang="en">One anonymous ping on launch carries three fields: a random ID, days since install, and app version. Nothing else. Full details in the <a href="https://brightraven.world/privacy.html">Privacy Policy</a>.</span>
-        <span data-lang="ja">起動時の匿名 ping は 3 フィールドだけ：ランダム ID、インストール経過日数、アプリバージョン。それ以外は送られません。詳細は<a href="https://brightraven.world/privacy.html">プライバシーポリシー</a>に。</span>
-        <span data-lang="zh-tw">啟動時會送一個匿名 ping，只有三個欄位：隨機 ID、安裝天數、應用版本。沒別的。完整說明在<a href="https://brightraven.world/privacy.html">隱私政策</a>。</span>
-        <span data-lang="zh-cn">启动时会送一个匿名 ping，只有三个字段：随机 ID、安装天数、应用版本。没别的。完整说明在<a href="https://brightraven.world/privacy.html">隐私政策</a>。</span>
-      </p>
-
-      <p class="strong" style="margin-top: var(--space-stack-lg);">
-        <span data-lang="en">Maida shouldn't become a habit. Less time here, more time playing. That's the whole design.</span>
-        <span data-lang="ja">Maida は習慣になってはいけません。ここで過ごす時間を減らし、遊ぶ時間を増やす。それだけが目的です。</span>
-        <span data-lang="zh-tw">Maida 不該變成你的習慣。在這裡花越少時間、玩遊戲花越多時間。這就是全部的設計目的。</span>
-        <span data-lang="zh-cn">Maida 不该变成你的习惯。在这里花越少时间、玩游戏花越多时间。这就是全部的设计目的。</span>
-      </p>
-    </section>
-
-    <section aria-labelledby="access-title">
-      <div class="label">
-        <span data-lang="en">Accessibility</span>
-        <span data-lang="ja">アクセシビリティ</span>
-        <span data-lang="zh-tw">無障礙</span>
-        <span data-lang="zh-cn">无障碍</span>
-      </div>
-      <h2 id="access-title">
-        <span data-lang="en">For everyone who finds starting harder than playing.</span>
-        <span data-lang="ja">遊ぶより「始める」ほうが重い、そんなあなたへ。</span>
-        <span data-lang="zh-tw">給每個覺得「開始」比玩還累的人。</span>
-        <span data-lang="zh-cn">给每个觉得「开始」比玩还累的人。</span>
-      </h2>
-      <ul>
-        <li>
-          <span data-lang="en">State changes (TRY, Not Now, anchor) are announced through your screen reader. Primary target: NVDA on Windows. Orca on Linux: partial support.</span>
-          <span data-lang="ja">状態変化（TRY、Not Now、アンカー）はスクリーンリーダーで読み上げられます。主な対象：Windows の NVDA。Linux の Orca は部分対応。</span>
-          <span data-lang="zh-tw">狀態變化（TRY、Not Now、anchor）會透過螢幕閱讀器朗讀。主要測試對象：Windows 的 NVDA。Linux 的 Orca 部分支援。</span>
-          <span data-lang="zh-cn">状态变化（TRY、Not Now、anchor）会透过屏幕阅读器朗读。主要测试对象：Windows 的 NVDA。Linux 的 Orca 部分支持。</span>
-        </li>
-        <li>
-          <span data-lang="en">Designed to be navigated entirely with D-pad, stick, or keyboard — whether you're on a handheld, can't use a mouse, or just prefer not to.</span>
-          <span data-lang="ja">D-pad、スティック、キーボードだけで全体を操作できるよう設計されています。ハンドヘルドでも、マウスが使えなくても、使いたくないだけでも。</span>
-          <span data-lang="zh-tw">設計上可用 D-pad、搖桿、鍵盤完整操作。不管你在手持裝置上、用不了滑鼠、還是單純不想用。</span>
-          <span data-lang="zh-cn">设计上可用 D-pad、摇杆、键盘完整操作。不管你在手持设备上、用不了鼠标、还是单纯不想用。</span>
-        </li>
-        <li>
-          <span data-lang="en">Starting a game takes a deliberate hold, not a tap. Built to absorb shaky fingers, bumped gamepads, or the occasional cat paw.</span>
-          <span data-lang="ja">ゲーム起動には意図的な長押しが必要。手が震える日、ポケットで当たったゲームパッド、キーボードの上を歩く猫、こうした状況を吸収するように作られています。</span>
-          <span data-lang="zh-tw">啟動遊戲需要刻意的長按，不能只是點擊。設計上用來吸收手抖、口袋誤觸的手把、或走過鍵盤的貓。</span>
-          <span data-lang="zh-cn">启动游戏需要刻意的长按，不能只是点击。设计上用来吸收手抖、口袋误触的手柄、或走过键盘的猫。</span>
-        </li>
-        <li>
-          <span data-lang="en">If motion makes you dizzy, set reduced motion once in your OS. Maida respects it, and there is no in-app toggle to accidentally desync from your system.</span>
-          <span data-lang="ja">動きで気分が悪くなる方は、OS の「動きを減らす」設定を入れてください。Maida はそれを尊重し、システムと食い違いうるアプリ側トグルは用意していません。</span>
-          <span data-lang="zh-tw">如果動畫讓你頭暈，在 OS 設定一次「減少動態效果」即可。Maida 尊重這個設定，app 內沒有會跟系統打架的開關。</span>
-          <span data-lang="zh-cn">如果动画让你头晕，在 OS 设置一次「减少动态效果」即可。Maida 尊重这个设定，app 内没有会跟系统打架的开关。</span>
-        </li>
-        <li>
-          <span data-lang="en">Focus stays visible for keyboard and gamepad input. Chromium's default hides it for gamepad, so Maida pairs <code>:focus</code> with <code>:focus-visible</code> to keep the ring showing.</span>
-          <span data-lang="ja">フォーカス枠はキーボード／ゲームパッド入力で見えるようにしています。Chromium の初期設定ではゲームパッド操作時に枠が消えるため、Maida は <code>:focus</code> と <code>:focus-visible</code> を両方指定して表示を維持しています。</span>
-          <span data-lang="zh-tw">鍵盤跟手把操作時焦點框會保持可見。Chromium 預設會在手把輸入時隱藏，Maida 同時指定 <code>:focus</code> 跟 <code>:focus-visible</code> 讓框保留。</span>
-          <span data-lang="zh-cn">键盘跟手柄操作时焦点框会保持可见。Chromium 默认会在手柄输入时隐藏，Maida 同时指定 <code>:focus</code> 跟 <code>:focus-visible</code> 让框保留。</span>
-        </li>
-      </ul>
-      <p>
-        <span data-lang="en"><a href="https://brightraven.world/accessibility/">Full accessibility statement &rarr;</a></span>
-        <span data-lang="ja"><a href="https://brightraven.world/accessibility/">完全なアクセシビリティ声明 &rarr;</a></span>
-        <span data-lang="zh-tw"><a href="https://brightraven.world/accessibility/">完整無障礙聲明 &rarr;</a></span>
-        <span data-lang="zh-cn"><a href="https://brightraven.world/accessibility/">完整无障碍声明 &rarr;</a></span>
-      </p>
-    </section>
-
-    <section aria-labelledby="cta-title">
-      <div class="label">
-        <span data-lang="en">Download</span>
-        <span data-lang="ja">ダウンロード</span>
-        <span data-lang="zh-tw">下載</span>
-        <span data-lang="zh-cn">下载</span>
-      </div>
-      <h2 id="cta-title">
-        <span data-lang="en">Tonight, don't just stare at the library.</span>
-        <span data-lang="ja">今夜は、ライブラリを眺めるだけで終わらせない。</span>
-        <span data-lang="zh-tw">今晚別再盯著庫看了。</span>
-        <span data-lang="zh-cn">今晚别再盯着库看了。</span>
-      </h2>
-      <p>
-        <span data-lang="en">Free. No account. Windows + Linux. Handheld-friendly.</span>
-        <span data-lang="ja">無料。アカウント不要。Windows + Linux。ハンドヘルド対応。</span>
-        <span data-lang="zh-tw">免費。不需要帳號。Windows / Linux。手持裝置友善。</span>
-        <span data-lang="zh-cn">免费。不需要账号。Windows / Linux。掌机友好。</span>
-      </p>
-      <a href="https://devbrightraven.itch.io/maida" class="cta">
-        <span data-lang="en">Download on itch.io</span>
-        <span data-lang="ja">itch.io でダウンロード</span>
-        <span data-lang="zh-tw">在 itch.io 下載</span>
-        <span data-lang="zh-cn">在 itch.io 下载</span>
-      </a>
-      <p class="github-aux">
-        <a href="https://github.com/devBrightRaven/maida/releases/latest">
-          <span data-lang="en">Also available on GitHub &rarr;</span>
-          <span data-lang="ja">GitHub からも入手可能 &rarr;</span>
-          <span data-lang="zh-tw">也可從 GitHub 取得 &rarr;</span>
-          <span data-lang="zh-cn">也可从 GitHub 获取 &rarr;</span>
-        </a>
-      </p>
-      <div class="download-aux">
-        <span class="manual-label">
-          <span data-lang="en">Manual:</span>
-          <span data-lang="ja">マニュアル:</span>
-          <span data-lang="zh-tw">使用手冊:</span>
-          <span data-lang="zh-cn">使用手册:</span>
-        </span>
-        <a href="manual/" class="cta cta-ghost cta-small">
-          <span data-lang="en">Online</span>
-          <span data-lang="ja">オンライン版</span>
-          <span data-lang="zh-tw">線上版</span>
-          <span data-lang="zh-cn">在线版</span>
-        </a>
-        <a href="https://gist.github.com/devBrightRaven/b26da3e8aef40d683a92e66e5b783fec" class="cta cta-ghost cta-small">
-          <span data-lang="en">Plain text</span>
-          <span data-lang="ja">テキスト版</span>
-          <span data-lang="zh-tw">純文字版</span>
-          <span data-lang="zh-cn">纯文字版</span>
-        </a>
-      </div>
-    </section>
-
-    <section aria-label="Tester feedback" style="margin-top: var(--space-section); text-align: center;">
-      <a href="mailto:bertram@brightraven.world" class="cta cta-ghost">
-        <span data-lang="en">Tell me how it went</span>
-        <span data-lang="ja">試したあとに、感想を聞かせて</span>
-        <span data-lang="zh-tw">試過之後，告訴我感想</span>
-        <span data-lang="zh-cn">试过之后，告诉我感想</span>
-      </a>
-    </section>
-
-    <footer style="padding: var(--space-section-major) 0 0; text-align: center; color: var(--ghost); font-size: var(--fs-micro);">
-      <p style="margin-bottom: var(--space-stack-sm);">
-        <a href="https://brightraven.world" class="footer-back" style="color: var(--accent); text-decoration: none;">&larr; Bright Raven World</a>
-      </p>
-      <p>&copy; 2026 Bright Raven World</p>
-    </footer>
-
+    <a href="https://maida.brightraven.world/" class="link">Maida is at maida.brightraven.world &rarr;</a>
+    <p class="redirect-note">Redirecting in 6 seconds...</p>
   </main>
-
-  <script>
-    const map = { en: 'en', ja: 'ja', 'zh-tw': 'zh-TW', 'zh-cn': 'zh-CN' };
-    const root = document.documentElement;
-    const themeBtn = document.getElementById('theme-toggle');
-    const themes = ['dark', 'light'];
-
-    const themeVars = {
-      dark: {
-        '--bg': '#0b0b0b', '--panel': '#121212', '--text': '#f1ebe3',
-        '--muted': '#d2cbc2', '--ghost': '#b9b0a5', '--accent': '#dcc4a0',
-        '--line': '#2a2622', '--focus': '#e8c840'
-      },
-      light: {
-        '--bg': '#f5f0eb', '--panel': '#ebe5de', '--text': '#1c1712',
-        '--muted': '#4f4942', '--ghost': '#584f45', '--accent': '#544125',
-        '--line': '#cfc5bb', '--focus': '#9a6f00'
-      }
-    };
-
-    const setThemeVars = (mode) => {
-      const vars = themeVars[mode] || themeVars.dark;
-      Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
-    };
-
-    const applyLang = (k) => {
-      root.className = 'lang-' + k;
-      root.lang = map[k] || 'en';
-      document.querySelectorAll('.lang-switch button[data-set-lang]').forEach(b => {
-        const on = b.dataset.setLang === k;
-        b.classList.toggle('active', on);
-        b.setAttribute('aria-pressed', on ? 'true' : 'false');
-      });
-      localStorage.setItem('maida-sample-lang', k);
-    };
-
-    const applyTheme = (mode) => {
-      if (mode === 'light') {
-        root.setAttribute('data-theme', 'light');
-        setThemeVars('light');
-        themeBtn.textContent = 'Dark';
-        themeBtn.setAttribute('aria-label', 'Switch to dark theme');
-      } else {
-        root.removeAttribute('data-theme');
-        setThemeVars('dark');
-        themeBtn.textContent = 'Light';
-        themeBtn.setAttribute('aria-label', 'Switch to light theme');
-      }
-      themeBtn.classList.add('is-active-theme');
-      localStorage.setItem('maida-sample-theme', mode);
-      themeBtn.dataset.mode = mode;
-    };
-
-    document.querySelectorAll('.lang-switch button[data-set-lang]').forEach(btn => {
-      btn.addEventListener('click', () => applyLang(btn.dataset.setLang));
-    });
-
-    themeBtn.addEventListener('click', () => {
-      const current = themeBtn.dataset.mode || 'dark';
-      const idx = themes.indexOf(current);
-      const next = themes[(idx + 1) % themes.length];
-      applyTheme(next);
-    });
-
-    const savedLang = localStorage.getItem('maida-sample-lang') || 'en';
-    const savedTheme = localStorage.getItem('maida-sample-theme') || 'dark';
-    applyLang(savedLang);
-    applyTheme(savedTheme);
-  </script>
 </body>
 </html>
